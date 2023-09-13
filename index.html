@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+
+            background-color: rgba(0, 0, 0, 0.9);
+            padding: 0;
+            margin: 0;
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .button {
+            position: relative;
+            width: 500px;
+            height: 100px;
+            background-color: #083a65;
+            border: none;
+            color: white;
+            font-size: 18px;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .button .text {
+
+            position: absolute;
+            width: calc(100% - 4px);
+            height: calc(100% - 4px);
+            top: 2px;
+            left: 2px;
+            background-color: #083a65;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 9px;
+        }
+
+        .button .top {
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            top: 0px;
+            left: 5px;
+            background-color: yellow;
+            animation: animate-top 1500ms linear;
+        }
+
+        .button .top::after {
+            content: "";
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            top: 0px;
+            right: 5px;
+            background-color: yellow;
+
+        }
+
+        .button .right {
+            position: absolute;
+            width: 2px;
+            height: 100%;
+            top: -5px;
+            right: 0;
+            background-color: yellow;
+            animation: animate-right 1500ms linear;
+        }
+
+        .button .right::before {
+            content: "";
+
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            right: 0;
+            bottom: -5px;
+            background-color: yellow;
+
+        }
+
+        .button .bottom {
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            bottom: 0;
+            right: 0;
+            background-color: yellow;
+            animation: animate-bottom 1500ms linear;
+        }
+
+        .button .bottom::before {
+            content: "";
+
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            bottom: 0px;
+            left: 0px;
+            background-color: yellow;
+
+        }
+
+        .button .left {
+            position: absolute;
+            width: 2px;
+            height: 100%;
+            bottom: 0;
+            left: 0;
+            background-color: yellow;
+            animation: animate-left 1500ms linear;
+        }
+
+        .button .left::before {
+            content: "";
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            top: 0px;
+            left: 0px;
+            background-color: yellow;
+
+        }
+
+        /* .button::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 0;
+            height: 0;
+            border-radius: 10px;
+            border-top: 1px solid yellow;
+            border-right: 1px solid yellow;
+            animation: border-top-right-animation 2s linear;
+        }
+
+        .button::after {
+            content: "";
+            position: absolute;
+            right: 0px;
+            bottom: 0px;
+            width: 0;
+            height: 0;
+            border-radius: 10px;
+            border-left: 1px solid yellow;
+            border-bottom: 1px solid yellow;
+            animation: border-bottom-left-animation 2s linear;
+        } */
+
+        @keyframes animate-top {
+            0% {
+                width: 0;
+            }
+
+            25% {
+                width: 100%;
+            }
+
+            50% {
+                width: 100%;
+            }
+
+            75% {
+                width: 100%;
+            }
+
+            100% {
+                width: 100%;
+            }
+        }
+
+        @keyframes animate-bottom {
+            0% {
+                width: 0;
+            }
+
+            25% {
+                width: 0;
+            }
+
+            50% {
+                width: 0;
+            }
+
+            75% {
+                width: 100%;
+            }
+
+            100% {
+                width: 100%;
+            }
+        }
+
+        @keyframes animate-right {
+            0% {
+                height: 0;
+            }
+
+            25% {
+                height: 0;
+            }
+
+            50% {
+                height: 100%;
+            }
+
+            75% {
+                height: 100%;
+            }
+
+            100% {
+                height: 100%;
+            }
+        }
+
+        @keyframes animate-left {
+            0% {
+                height: 0;
+            }
+
+            25% {
+                height: 0;
+            }
+
+            50% {
+                height: 0;
+            }
+
+            75% {
+                height: 0;
+            }
+
+            100% {
+                height: 100%;
+            }
+        }
+    </style>
+    <!-- <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: rgba(0, 0, 0, 0.9);
+        }
+
+        .button {
+            position: relative;
+            width: 500px;
+            height: 100px;
+            background-color: #083a65;
+            border: none;
+            color: white;
+            font-size: 18px;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .button .text {
+            position: absolute;
+            width: calc(100% - 4px);
+            height: calc(100% - 4px);
+            top: 2px;
+            left: 2px;
+            background-color: #083a65;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 9px;
+        }
+
+        .button .top {
+            position: absolute;
+            left: 5px;
+            top: 0px;
+            width: 100%;
+            height: 2px;
+            background-color: yellow;
+            animation: animate-top 1500ms linear;
+        }
+
+        .button .top::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 5px;
+            width: 10px;
+            height: 10px;
+            background-color: yellow;
+        }
+
+        .button .right {
+            position: absolute;
+            right: 0;
+            top: -5px;
+            width: 2px;
+            height: 100%;
+            background-color: yellow;
+            animation: animate-right 1500ms linear;
+        }
+
+        .button .right::before {
+            content: "";
+            position: absolute;
+            bottom: -5px;
+            right: 0;
+            width: 10px;
+            height: 10px;
+            background-color: yellow;
+        }
+
+        .button .bottom {
+            position: absolute;
+            right: 0;
+            bottom: 0px;
+            width: 100%;
+            height: 2px;
+            background-color: yellow;
+            animation: animate-bottom 1500ms linear;
+        }
+
+        .button .bottom::before {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 10px;
+            height: 10px;
+            background-color: yellow;
+        }
+
+        .button .left {
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 2px;
+            height: 100%;
+            background-color: yellow;
+            animation: animate-left 1500ms linear;
+        }
+
+        .button .left::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 10px;
+            height: 10px;
+            background-color: yellow;
+        }
+
+        @keyframes animate-top {
+            0% {
+                width: 0px;
+            }
+
+            25% {
+                width: 100%;
+            }
+
+            50% {
+                width: 100%;
+            }
+
+            75% {
+                width: 100%;
+            }
+
+            100% {
+                width: 100%;
+            }
+        }
+
+        @keyframes animate-right {
+            0% {
+                height: 0;
+            }
+
+            25% {
+                height: 0;
+            }
+
+            50% {
+                height: 100%;
+            }
+
+            75% {
+                height: 100%;
+            }
+
+            100% {
+                height: 100%;
+            }
+        }
+
+        @keyframes animate-bottom {
+            0% {
+                width: 0;
+            }
+
+            25% {
+                width: 0;
+            }
+
+            50% {
+                width: 0;
+            }
+
+            75% {
+                width: 100%;
+            }
+
+            100% {
+                width: 100%;
+            }
+        }
+
+        @keyframes animate-left {
+            0% {
+                height: 0;
+            }
+
+            25% {
+                height: 0;
+            }
+
+            50% {
+                height: 0;
+            }
+
+            75% {
+                height: 0;
+            }
+
+            100% {
+                height: 100%;
+            }
+        }
+    </style> -->
+    <title>Document</title>
+
+</head>
+
+<body>
+    <button class="button">
+        <span class="top"></span>
+        <span class="right"></span>
+        <span class="bottom"></span>
+        <span class="left"></span>
+        <span class="text">Animated Button</span>
+    </button>
+</body>
+
+</html>

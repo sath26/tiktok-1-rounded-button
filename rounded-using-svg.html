@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: sans-serif;
+            background: black;
+            height: 100dvh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+
+        }
+
+        .button {
+            position: relative;
+            width: 200px;
+            height: 40px;
+            background-color: #083a65;
+            border: 0;
+            color: white;
+            font-size: 18px;
+            border-radius: 10px;
+            cursor: pointer;
+            max-width: 100%;
+
+
+        }
+
+        button svg {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        button rect {
+            animation: button-border 2s linear;
+        }
+
+        @keyframes button-border {
+            to {
+                stroke-dashoffset: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <h1>hey</h1>
+    <button type="button" class="button">
+        My Button
+        <svg viewBox="0 0 200 40" fill="none" preserveAspectRatio="none">
+            <rect vector-effect="non-scaling-stroke" x="0.5" y="0.5" width="199" height="39" rx="9.5" stroke="yellow"
+                stroke-dasharray="460" stroke-dashoffset="460" />
+
+        </svg>
+    </button>
+
+</body>
+
+</html>
