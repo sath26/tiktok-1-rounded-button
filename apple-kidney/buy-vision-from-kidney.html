@@ -25,19 +25,28 @@
         }
 
         .button {
+            position: relative;
             display: inline-flex;
             height: 40px;
-            width: 150px;
+            width: 250px;
             border: 2px solid black;
-            margin: 20px 20px 20px 20px;
+            margin: 20px 10px 20px 20px;
             color: black;
             text-transform: uppercase;
             text-decoration: none;
+            text-align: center;
             font-size: .8em;
             letter-spacing: 1.5px;
             align-items: center;
             justify-content: center;
+            border-radius: 30px;
             overflow: hidden;
+            padding-left: 5px;
+        }
+
+        .button:hover {
+            color: white;
+            background-color: black;
         }
 
         a {
@@ -46,59 +55,85 @@
             letter-spacing: 1px;
         }
 
-        .arrow-hover {
+        .kidney {
             width: 25px;
             height: 20px;
             position: absolute;
-            transform: translateX(60px);
+            /* transform: translateX(5px); */
             opacity: 0;
-            -webkit-transition: all .25s cubic-bezier(.14, .59, 1, 1.01);
-            transition: all .15s cubic-bezier(.14, .59, 1, 1.01);
-            margin: 0;
-            padding: 0 5px;
+            /* -webkit-transition: all .25s cubic-bezier(.14, .59, 1, 1.01);
+            transition: all .15s cubic-bezier(.14, .59, 1, 1.01); */
+            margin: 5;
+            padding: 20px 10px;
         }
 
-        .arrow {
+        .vision {
             width: 25px;
             height: 20px;
             position: absolute;
-            transform: translateX(60px);
+            transform: translateX(-95px);
             opacity: 1;
-            -webkit-transition: all .25s cubic-bezier(.14, .59, 1, 1.01);
-            transition: all .15s cubic-bezier(.14, .59, 1, 1.01);
+            /* -webkit-transition: all .25s cubic-bezier(.14, .59, 1, 1.01);
+            transition: all .15s cubic-bezier(.14, .59, 1, 1.01); */
             margin: 0;
-            padding: 0 5px;
+            padding: 25px;
+            /* -webkit-box-reflect: right; */
+
         }
 
-        .arrow:hover {
+        .vision:hover {
             opacity: 0;
         }
 
-        a#button-1:hover img.arrow {
+        a#button-1:hover img.vision {
+
             width: 25px;
             opacity: 0;
-            transform: translateX(50px);
+            /* transform: translateX(-40px); */
+        }
+
+        img#left:hover {
+            -webkit-box-reflect: right;
         }
 
         #right {
             position: absolute;
-            left: 240px;
+            left: 90px;
+            filter: invert(1);
+
+            /* transform: scaleX(-1); */
             /* significant number */
         }
 
         a#button-1:hover img {
             width: 25px;
             opacity: 1;
-            transform: translateX(50px);
+            -webkit-box-reflect: right -25px;
+            /* animation: rotation 2s infinite linear; */
+            transform: translateX(-100px);
+            filter: invert(1);
+
         }
+
+        /* @keyframes rotation {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(90deg);
+            }
+        } */
     </style>
 </head>
 
 <body>
     <div id="container">
 
-        <a id="button-1" class="button" href="#">Let's Go!<img class="arrow-hover" id="left" src="kidney.svg" /><img
-                class="arrow-hover" id="right" src="kidney.svg" /><img class="arrow" id="left" src="vision.svg" /></a>
+        <a id="button-1" class="button" href="#">Buy Vision Pro
+            <img class="kidney" id="left" src="kidney.svg" />
+            <!-- <img class="kidney" id="right" src="kidney.svg" /> -->
+            <img class="vision" id="left" src="vision.svg" /></a>
     </div>
 </body>
 
