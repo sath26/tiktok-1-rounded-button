@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: #151845;
+            padding: 0;
+            margin: 0;
+        }
+
+        .container {
+            height: 370px;
+            width: 370px;
+        }
+
+        .moon {
+            background-color: #39beff;
+            height: 170px;
+            width: 170px;
+            border-radius: 50%;
+            position: absolute;
+            margin: auto;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            overflow: hidden;
+        }
+
+        .crater {
+            background-color: #31b4ff;
+
+        }
+
+        .orbit {
+            height: 280px;
+            width: 280px;
+            border-radius: 50%;
+            position: absolute;
+            margin: auto;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            animation: spin 10s infinite linear;
+        }
+
+        @keyframes spin {
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        .rocket {
+            background-color: #fafcf7;
+            height: 50px;
+            width: 25px;
+            border-radius: 50% 50% 0 0;
+            position: relative;
+            left: -11px;
+            top: 115px;
+        }
+
+        .rocket:before {
+            content: "";
+            position: absolute;
+            background-color: #39beff;
+            height: 20px;
+            width: 55px;
+            border-radius: 50% 50% 0 0;
+            z-index: -1;
+            right: -15px;
+            bottom: 0;
+        }
+
+        .rocket:after {
+            content: "";
+            position: absolute;
+            background-color: #39beff;
+            height: 4px;
+            width: 15px;
+            border-radius: 0 0 2px 2px;
+            /* z-index: -1; */
+            left: 4.5px;
+            bottom: -4px;
+        }
+
+        .window {
+            background-color: #151845;
+            height: 10px;
+            width: 10px;
+            border: 2px solid #b8d2ec;
+            border-radius: 50%;
+            position: relative;
+            top: 17px;
+            left: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="moon"></div>
+        <div class="orbit">
+            <div class="rocket">
+                <div class="window"></div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
