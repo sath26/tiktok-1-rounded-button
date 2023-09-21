@@ -19,37 +19,208 @@ $base-color: #e40913
     background-color: $bg-color
     overflow: hidden
 
-    netflixintro
-    display: block
-    position: relative
-    width: 300px
-    height: 300px
-    overflow: hidden
-    animation-name: zoom-in
-    animation-delay: .5s
-    animation-duration: 3.5s
-    animation-timing-function: ease-ins
-    &::before
-        content: ""
-        position: absolute
+    .netflixintro
         display: block
-        background-color: $bg-color
-        width: 150%
-        height: 30%
-        left: -25%
-        bottom: -27%
-        border-radius: 50%
-        z-index: 5
-        transform-origin: left center
+        position: relative
+        width: 300px
+        height: 300px
+        overflow: hidden
+        animation-name: zoom-in
+        animation-delay: .5s
+        animation-duration: 3.5s
+        animation-timing-function: ease-in
+        animation-fill-mode: forwards
         background-size: 4000px
-    &[letter="N"]
-        transform-origin: 30% center
-        .helper-1
-            width: 19.5%
-            height: 100%
+        background-position: -195px 0
 
+        &::before
+            content: ""
+            position: absolute
+            display: block
+            background-color: $bg-color
+            width: 150%
+            height: 30%
+            left: -25%
+            bottom: -27%
+            border-radius: 50%
+            z-index: 5
+            transform-origin: left center
+            background-size: 4000px
+            background-position: -195px 0
+
+        &[letter="N"]
+            transform-origin: 30% center
+            .helper-1
+                width: 19.5%
+                height: 100%
+                background-color: rgba($base-color, .5)
+                left: 22.4%
+                top: 0
+                tranform: rotate(180deg)
+                animation-name: fading-lumieres-box
+                animation-duration: 2s
+                animation-delay: .6s
+                animation-fill-mode: forwards
+                .effect-brush
+                    animation-name: brush-moving
+                    animation-duration: 2.5s
+                    animation-fill-mode: forwards
+                    animation-delay: 1.2s
+                    [class*="fur-"]
+                    bottom: 0
+                    height: 40%
+            .helper-3
+                width: 19%
+                height: 150%
+                left: 40.5%
+                top: -25%
+                transform: rotate(-19.5deg)
+                box-shadow: 0px 0px 35px -12px rgba(0,0,0,.4)
+                .effect-brush
+                    animation-name: brush-moving
+                    animation-duration: 2s
+                    animation-fill-mode: forwards
+                    animation-delay: .8s
+            .helper-2
+                width: 19.5%
+                height: 100%
+                left: 57.8%
+                top: 0
+                transform: rotate(180deg)
+                overflow: hidden
+                .effect-brush
+                    animation-name: brush-moving
+                    animation-duration: 2s
+                    animation-fill-mode: forwards
+                    animation-delay: .5s
+        &[letter="E"]
+            transform-origin: 30% center
+            .helper-1
+                width: 19.5%
+                height: 100%
+                background-color: rgba($base-color, .5)
+                left: 22%
+                top: 0
+                transform: rotate(180deg)
+                animation-name: fading-lumieres-box
+                animation-duration: 2s
+                animation-delay: .6s
+                animation-fill-mode: forwards
+                .effect-brush
+                    animation-name: brush-moving
+                    animation-duration: 2.5s
+                    animation-fill-mode: forwards
+                    animation-delay: 1.2s
+                    [class*="fur-"]
+                    bottom: 0
+                    height: 40%
+            .helper-2
+                width: 17.5%
+                height: 50%
+                left: 38%
+                top: -49px
+                transform: rotate(270deg)
+                overflow: hidden
+                .effect-brush
+                    animation-name: brush-moving
+                    animation-duration: 2s
+                    animation-fill-mode: forwards
+                    animation-delay: .8s
+            .helper-3
+                width: 17%
+                height: 39%
+                left: 33%
+                top: 29%
+                transform: rotate(-90deg)
+                box-shadow: 0px 0px 35px -12px rgba(0,0,0,0.4)
+                overflow: hidden
+                animation-name: fading-out
+                animation-duration: 2s
+                animation-fill-mode: forwards
+                animation-delay: 1s
+                .effect-brush
+                    animation-name: brush-moving
+                    animation-duration: 2s
+                    animation-fill-mode: forwards
+                    animation-dealy: .6s
+                .helper-4
+                    width: 17.5%
+                    height: 50%
+                    left: 38%
+                    top: 196px
+                    transform: rotate(270deg)
+                    overflow: hidden
+                    .effect-brush
+                        animation-name: brush-moving
+                        animation-duration: 2s
+                        animation-fill-mode: forwards
+                        animation-delay: .4s
+                        animation-delay: .5s
+
+        [class*="helper-"]
+                        position: absolute
+                        margin: 0
+        .effect-brush
+            position: absolute
+            width: 100%
+            height: 300%
+            top: 0
+            overflow: hidden
+            &::before
+                display: block
+                content: ""
+                position: absolute
+                background-color: $base-color
+                width: 100%
+                height: 70%
+                box-shadow: 0px 0px 29px 24px $base-color
+
+            [class*="fur-"]
+                display: block
+                position: absolute
+                bottom: 10%
+                height: 30%
+
+@keyframes brush-moving
+    0%
+        transform: translateY(0)
+    100%
+        transform: translateY(-100%)
+@keyframes fading-out
+    0%
+        opacity: 1
+    100%
+        opacity: 0
+@keyframes lumieres-moving-right
+    0%
+        transform: translate(0)
+    40%
+        transform: translate(-10px) scaleX(1)
+    50%
+        transform: translate(-60px)
+    100%
+        transform: translate(-120px) scaleX(3)
+@keyframes lumieres-moving-left
+    0%
+        transform: translate(0)
+    40%
+        transform: translate(-10px) scaleX(1)
+    50%
+        transform: translate(60px)
+    100%
+        transform: translate(120px) scaleX(3)
 @keyframes zoom-in
     0%
         transform: scale(1)
     100%
         transform: scale(15)
+@keyframes showing-lumieres
+    0%
+        opacity: 0
+    100%
+        opacity: 1
+@keyframes fading-lumieres-box
+    0%
+        background-color: rgba($base-color, .5)
+    100%
+        background-color: rgba($base-color, .0)
