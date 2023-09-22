@@ -43,28 +43,7 @@ body {
             padding: 2rem;
             background: var(--footer-background);
 
-            >div {
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
 
-                >div {
-                    margin: 0.25rem 0;
-
-                    >* {
-                        margin-right: .5rem;
-                    }
-                }
-
-                .image {
-                    align-self: center;
-                    width: 4rem;
-                    height: 4rem;
-                    margin: 0.25rem 0;
-                    background-size: cover;
-                    background-position: center;
-                }
-            }
         }
     }
 
